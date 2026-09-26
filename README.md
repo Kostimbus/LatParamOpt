@@ -50,5 +50,18 @@ python3 finder.py LWE -bit 50 -n n -q q -t t --enable-big --enable-refine --bit-
 ## Interactive Plots
 The `interactive_lwe_plots` directory contains pre-generated interactive 3D HTML plots and the raw voxel data used to generate them. You can open the `.html` files directly in any modern web browser to explore how the parameter space impacts the hardness of various attacks.
 
+### Visualizations
+#### Primal Hybrid Attack Landscape
+![Primal Hybrid Attack 3D](interactive_lwe_plots/primal_hybrid_matplotlib_3d_summary.png)
+*Figure 1: 3D Parameter Hardness Landscape for Primal Hybrid Attack on LWE.*
+
+A 3D scatter visualization illustrating the estimated bit-security of the LWE problem against the Primal Hybrid Attack across varying parameters: dimension ($n$), modulus ($q$), and centered binomial error distribution parameter ($t$). The colormap highlights security levels ranging from ~40 to 250+ bits, demonstrating how dimensionality and noise scaling counter guessing and lattice reduction techniques.
+
+#### Multi-Attack Comparison
+![Comparative Security Analysis](interactive_lwe_plots/matplotlib_3d_summary.png)
+*Figure 2: Comparative Security Analysis Across 6 Major LWE Attack Families.*
+
+Comparative hardness evaluation across six canonical attack vectors on LWE: Arora-GB (algebraic), BKW (combinatorial), and lattice-reduction variants (uSVP, BDD, Dual, and Dual Hybrid). Each subplot maps the sensitivity of the attack to dimension ($n$), modulus ($q$), and noise ($t$), revealing distinct bottleneck zones and justifying the need for automated SMT-based parameter optimization.
+
 ## Scientific Contribution
 Foundational hardness results (like worst-case to average-case reductions) prove that solving lattice problems is computationally hard asymptotically. However, they do not tell engineers which exact values to choose for a specific security level in practice. This tool bridges the gap between theoretical cryptography and real-world deployment. By modeling cryptographic design constraints symbolically and leveraging SMT solvers, it provides a reproducible, auditable, and automated path from security requirements to concrete deployment parameters.
