@@ -65,3 +65,7 @@ Comparative hardness evaluation across six canonical attack vectors on LWE: Aror
 
 ## Scientific Contribution
 Foundational hardness results (like worst-case to average-case reductions) prove that solving lattice problems is computationally hard asymptotically. However, they do not tell engineers which exact values to choose for a specific security level in practice. This tool bridges the gap between theoretical cryptography and real-world deployment. By modeling cryptographic design constraints symbolically and leveraging SMT solvers, it provides a reproducible, auditable, and automated path from security requirements to concrete deployment parameters.
+
+
+## License
+This project is licensed under the Non-Commercial Academic License - see the [LICENSE](LICENSE) file for details. Free for academic, educational, and research use. Commercial use is prohibited without permission.
